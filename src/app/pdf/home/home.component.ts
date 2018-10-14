@@ -2,6 +2,9 @@
 import { Component, OnInit } from '@angular/core';
 import * as jsPDF from 'jspdf';
 
+// import { LoggerService } from './../../core/services/logger.service';
+import { LoggerService } from '@core/services/logger.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
