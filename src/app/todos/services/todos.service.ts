@@ -12,6 +12,6 @@ export class TodosService {
   }
 
   updatePartialTodo(todo: Partial<Todo>) {
-    // update partial todo
+    // update todo
   }
 }

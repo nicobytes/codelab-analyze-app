@@ -39,9 +39,10 @@ export class HomeComponent implements OnInit {
     this.todosService.updateTodo(todo);
   }
 
-  updateTodoTitle() {
+  updatePartialTodo() {
     const todo: Partial<Todo> = {
       title: 'titutlo',
+      description: 'as'
     };
     this.todosService.updatePartialTodo(todo);
   }
