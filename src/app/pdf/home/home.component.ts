@@ -7,7 +7,10 @@ import { LoggerService } from '@core/services/logger.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
+  template: `
+    <h1>pdf</h1>
+    <button type="button" (click)="generatePdf()">build pdf</button>
+  `,
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {

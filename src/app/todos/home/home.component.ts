@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TodosService } from './../services/todos.service';
-import { Todo } from './../models/todo.model';
-
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
+  template: `
+    <h1>todos</h1>
+
+    <ul>
+      <li *ngFor="let todo of todos">
+        {{ todo.title}}
+      </li>
+    </ul>
+  `,
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
@@ -22,29 +27,9 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor(
-    private todosService: TodosService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  updateTodo() {
-    const todo: Todo = {
-      title: 'titutlo',
-      description: 'bla bla',
-      date: new Date(),
-      completed: false
-    };
-    this.todosService.updateTodo(todo);
-  }
-
-  updatePartialTodo() {
-    const todo: Partial<Todo> = {
-      title: 'titutlo',
-      description: 'as'
-    };
-    this.todosService.updatePartialTodo(todo);
   }
 
 }
