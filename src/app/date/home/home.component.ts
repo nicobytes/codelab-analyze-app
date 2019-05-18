@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.date = moment().add(1, 'm').format('YYYY-MM-DD');
+    this.date = moment().add(20, 'days').format('YYYY/MMMM/DD');
   }
 
 }

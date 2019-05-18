@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: './todos/todos.module#TodosModule'
   },
   {
+    path: 'date',
+    loadChildren: './date/date.module#DateModule'
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
@@ -22,7 +26,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
